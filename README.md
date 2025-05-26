@@ -1,2 +1,5 @@
 # 100-days-of-cybersecurity
-A daily log of my 100-day cybersecurity challenge — covering SOC, Linux, threat hunting, SIEM, and more.
+I'll be documenting what I learn each day, tools I explore, and challenges I face.  
+Follow along and let’s grow together! 💻
+
+✅ Progress Tracker
