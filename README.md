@@ -96,12 +96,6 @@ Today’s focus was on understanding how Linux handles users, groups, and permis
 - if/else
 - echo
 
-### 📸 Screenshot
-
-Here’s a snapshot of my Bash script in action:
-
-![Day 3 Output](images/day3_output.png)
-
-💬 Reflection
+## 💬 Reflection
 This day tested my patience, but also opened my eyes to how scripting automates auditing. I still have a long way to go, but this is a solid step forward. I may have posted this late, but I’m proud I didn’t give up.
 
