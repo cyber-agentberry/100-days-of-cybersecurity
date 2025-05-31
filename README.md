@@ -57,3 +57,51 @@ Today’s focus was on understanding how Linux handles users, groups, and permis
 
 > Every command I used today deepened my understanding of how Linux enforces access control — a key skill in system hardening and cybersecurity.
 
+---
+### 📅 Day 3 of 100 – Bash Scripting Challenge
+
+## 🎯 Task
+- Create a Bash script to list all users and display their last login time.
+
+## 🔍 Objective
+- To deepen my understanding of Bash scripting, user account structure in Linux, and system auditing using command-line tools.
+
+## 🧠 What I Learned
+- How to read and parse /etc/passwd
+- Filtering regular users (UID ≥ 1000)
+- Using the last command to fetch login records
+- Handling null or missing login entries
+- Basics of:
+- Conditional logic (if, else)
+- Loops (while read)
+- Shell variables
+- Command substitution ($(...))
+
+## ⚙️ Script Summary
+- The script:
+- Prints the current time
+- Iterates through users
+- Skips system users and incomplete records
+- Displays user details and last login information
+-Alerts if the root user is found
+
+## 🚧 Challenge
+- This was my first real Bash scripting experience. It was confusing, overwhelming, and required a lot of Googling and testing. I didn't understand everything right away, but I kept pushing through.
+
+## ✅ Key Commands Used
+- last
+- grep
+- head
+- read
+- if/else
+- echo
+
+### 📸 Screenshot
+
+Here’s a snapshot of my Bash script in action:
+
+![Day 3 Output](images/day3_output.png)
+
+💬 Reflection
+This day tested my patience, but also opened my eyes to how scripting automates auditing. I still have a long way to go, but this is a solid step forward. I may have posted this late, but I’m proud I didn’t give up.
+
