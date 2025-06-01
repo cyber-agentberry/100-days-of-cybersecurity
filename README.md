@@ -99,3 +99,70 @@ Today’s focus was on understanding how Linux handles users, groups, and permis
 ## 💬 Reflection
 This day tested my patience, but also opened my eyes to how scripting automates auditing. I still have a long way to go, but this is a solid step forward. I may have posted this late, but I’m proud I didn’t give up.
 
+
+# 📆 Day 4 of 100 Days of Cybersecurity
+
+## 🔄 Automating Log Cleanup with Bash and Cron
+
+In today's task, I worked on automating log file cleanups using **Bash scripting** and **cron jobs**. I explored two approaches:
+
+---
+
+## ✅ Approach 1: System-Level Log Cleanup (Using `sudo`)
+
+**🗂️ Directory:** `/var/log`  
+**🕒 Retention:** Logs older than **12 days**  
+**🛑 Exceptions:** `auth.log`, `syslog` were excluded from deletion.
+
+### 🔧 Script Snippet
+
+```bash
+#!/bin/bash
+
+LOG_DIR="/var/log"
+RETENTION_DAYS=12
+
+find "$LOG_DIR" -type f -name "*.log" -mtime +$RETENTION_DAYS \
+! -name "auth.log" ! -name "syslog" -print -exec rm -f {} \;
+
+echo "$(date): /var/log cleanup completed." >> /var/log/cleanup_record.log
+
+```
+📅 Cron Job (runs daily at 15pm)
+
+``` sudo crontab -e
+# Add this line:
+1 5 * * * /path/to/cleanup_script.sh
+```
+
+## 🧪 Approach 2: User-Level Log Cleanup (No sudo)
+
+To test log deletion as a non-root user, I created a test log directory in my home folder.
+
+🗂️ Directory: ~/sys_logs
+🕒 Retention: Logs older than 0 days (for instant test)
+🗒️ Log Record: Stored in ~/sys_logs_record.txt
+
+### 🔧 Script Snippet
+```bash
+#!/bin/bash
+
+LOG_DIR="$HOME/sys_logs"
+RETENTION_DAYS=0
+
+find "$LOG_DIR" -type f -name "*.log" -mtime +$RETENTION_DAYS -exec rm -f {} \;
+
+echo "$(date): Removed logs older than $RETENTION_DAYS in $LOG_DIR" >> "$HOME/sys_logs_record.txt"
+```
+### 📅 Cron Job (runs daily at 10AM)
+```
+crontab -e
+# Add this line:
+1 0 * * * /home/yourusername/sys_logs.sh
+```
+## 📚 What I Learned
+
+- Writing Bash scripts using find, -exec, -print
+- Differentiating between root-level and user-level permissions
+- Automating system tasks with cron
+- Logging cleanup actions for auditing purposes
