@@ -100,7 +100,7 @@ Today’s focus was on understanding how Linux handles users, groups, and permis
 This day tested my patience, but also opened my eyes to how scripting automates auditing. I still have a long way to go, but this is a solid step forward. I may have posted this late, but I’m proud I didn’t give up.
 
 
-# 📆 Day 4 of 100 Days of Cybersecurity
+### 📆 Day 4 of 100 Days of Cybersecurity
 
 ## 🔄 Automating Log Cleanup with Bash and Cron
 
@@ -166,3 +166,25 @@ crontab -e
 - Differentiating between root-level and user-level permissions
 - Automating system tasks with cron
 - Logging cleanup actions for auditing purposes
+
+
+### 🔐 𝗗𝗮𝘆 𝟱 𝗼𝗳 𝟭𝟬𝟬 𝗗𝗮𝘆𝘀 𝗼𝗳 𝗖𝘆𝗯𝗲𝗿𝘀𝗲𝗰𝘂𝗿𝗶𝘁𝘆 𝗖𝗵𝗮𝗹𝗹𝗲𝗻𝗴𝗲
+## 🗂️ 𝗧𝗼𝗽𝗶𝗰: Monitoring Running Processes Using "ps" and "top"
+Today, I focused on monitoring system processes using key commands
+
+## 🧠 𝗪𝗵𝗮𝘁 𝗜 𝗟𝗲𝗮𝗿𝗻𝗲𝗱:
+- ps aux: Displays all running processes from all users.
+- top: Provides a real-time, dynamic view of active processes.
+
+## 🕵🏾‍♀️ 𝗠𝘆 𝗧𝗵𝗼𝘂𝗴𝗵𝘁 𝗣𝗿𝗼𝗰𝗲𝘀𝘀:
+Since one of the goals of system monitoring is to detect malicious activity, I began asking:
+“How would I know if a process is suspicious?”
+So I decided to:
+- Scan for unusual names like ..., _, or unexplained bash processes.
+- Look for processes that stand out in behavior or resource usage.
+The output was clean today, but here's what I'd do if I found something strange:
+- Use kill <PID> to terminate suspicious processes.
+- Run lsof -p <PID> to investigate what files or network connections the process is using.
+
+## 🔍 𝗧𝗮𝗸𝗲𝗮𝘄𝗮𝘆:
+System monitoring isn't just running commands. It's about interpreting the output and thinking like an attacker and a defender. This was a practical step into process hunting and understanding incident response workflows.
